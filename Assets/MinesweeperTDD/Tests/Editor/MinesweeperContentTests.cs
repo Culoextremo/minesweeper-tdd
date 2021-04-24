@@ -1,21 +1,20 @@
 using FluentAssertions;
-using Kalendra.Commons.Tests.TestDataBuilders.Builders;
 using MinesweeperTDD.Runtime.Domain;
 using MinesweeperTDD.Tests.TestDataBuilders;
 using NUnit.Framework;
 
-namespace UnityEngine.TestTools.Utils
+namespace MinesweeperTDD.Tests
 {
     public class MinesweeperContentTests
     {
-        [Theory]
-        public void IsBomb_PropertySet(bool isBomb)
+        [Test]
+        public void HasFlag_IsFalse_ByDefault()
         {
-            MinesweeperContent sut = MinesweeperContentBuilder.New().WithIsBomb(isBomb);
+            MinesweeperContent sut = MinesweeperContentBuilder.New();
 
-            var result = sut.IsBomb;
+            var result = sut.HasFlag;
 
-            result.Should().Be(isBomb);
+            result.Should().Be(false);
         }
     }
 }

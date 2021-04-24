@@ -1,7 +1,9 @@
 {
     "name": "MinesweeperTDD.Runtime.Domain",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:54043fe83d89fc64dacdfa2401a9efac"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

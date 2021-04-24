@@ -1,3 +1,17 @@
 {
-  "name": "MinesweeperTDD_Tests_Builders"
+    "name": "MinesweeperTDD_Tests_Builders",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4c5265916d537f3428fe30fb54b7b82d",
+        "GUID:e57ac237f7883f141bf7f0f1e7b271a2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

@@ -10,5 +10,6 @@ namespace MinesweeperTDD.Runtime.Domain
         }
 
         public bool IsBomb { get; }
+        public bool HasFlag { get; set; }
     }
 }
