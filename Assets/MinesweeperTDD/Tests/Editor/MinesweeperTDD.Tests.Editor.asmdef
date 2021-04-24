@@ -1,3 +1,27 @@
 {
-  "name": "MinesweeperTDD.Tests.Editor"
+    "name": "MinesweeperTDD.Tests.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:e372c541aba5148868e12aa078ca7c20",
+        "GUID:54043fe83d89fc64dacdfa2401a9efac",
+        "GUID:0363c39af0dc2f442b1cb16b3f39a106",
+        "GUID:e57ac237f7883f141bf7f0f1e7b271a2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "NSubstitute.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
