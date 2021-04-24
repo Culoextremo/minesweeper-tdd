@@ -10,14 +10,13 @@ namespace MinesweeperTDD.Tests
 {
     public class MinesweeperBoard : Board
     {
-        int bombCount; 
-        
+        public MinesweeperContent GetContent(int x, int y) => tiles[(x, y)].Content as MinesweeperContent;
+
         public MinesweeperBoard(int sizeX, int sizeY, int bombCount) : base(sizeX, sizeY)
         {
             AssertBombCountIsPositive(bombCount);
-            
-            this.bombCount = bombCount;
-            
+            AssertBombCountIsSmallerThanSize(sizeX, sizeY, bombCount);
+
             InitTileContents(sizeX, sizeY);
             InitBombs(bombCount);
         }
@@ -31,13 +30,25 @@ namespace MinesweeperTDD.Tests
 
         void InitBombs(int bombsToSpawn)
         {
-            tiles[(0, 0)].Content = new MinesweeperContent(true);
+            var values = tiles.Values.ToArray();
+            for (int i = 0; i < bombsToSpawn; i++)
+            {
+                values[i].Content = new MinesweeperContent(true);
+            }
         }
 
         static void AssertBombCountIsPositive(int bombCount)
         {
             if(bombCount <= 0)
                 throw new ArgumentOutOfRangeException(nameof(bombCount));
+        }
+        static void AssertBombCountIsSmallerThanSize(int sizeX, int sizeY, int bombCount)
+        {
+            int size = sizeX * sizeY;
+            if (bombCount >= size)
+            {
+                throw new ArgumentOutOfRangeException(nameof(bombCount));
+            }
         }
     }
 }
