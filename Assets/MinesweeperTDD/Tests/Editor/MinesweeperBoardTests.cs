@@ -1,7 +1,9 @@
 ﻿using System;
 using FluentAssertions;
+using Kalendra.Commons.Runtime.Architecture.Services;
+using Kalendra.Minesweeper.Tests.TestDataBuilders.StaticShortcuts;
 using MinesweeperTDD.Runtime.Domain;
-using MinesweeperTDD.Tests.TestDataBuilders;
+using NSubstitute;
 using NUnit.Framework;
 
 
@@ -12,7 +14,7 @@ namespace MinesweeperTDD.Tests
         [Test]
         public void Size_IsSet_ByConstructor()
         {
-            MinesweeperBoard sut = MinesweeperBoardBuilder.New().WithSize(3, 4);
+            MinesweeperBoard sut = Build.MinesweeperBoard().WithSize(3, 4);
 
             var result = sut.Size;
 
@@ -22,7 +24,7 @@ namespace MinesweeperTDD.Tests
         [Test]
         public void BombCount_NonPositive_ThrowsException()
         {
-            var sut = MinesweeperBoardBuilder.New().WithBombCount(0);
+            var sut = Build.MinesweeperBoard().WithBombCount(0);
 
             Action act = () => sut.Build();
 
@@ -32,7 +34,7 @@ namespace MinesweeperTDD.Tests
         [Test]
         public void BombCount_IsPlaced_ByConstructor()
         {
-            MinesweeperBoard sut = MinesweeperBoardBuilder.New().WithSize(1,5).WithBombCount(4);
+            MinesweeperBoard sut = Build.MinesweeperBoard().WithSize(1,5).WithBombCount(4);
 
             sut.GetContent(0, 0).IsBomb.Should().BeTrue();
             sut.GetContent(0, 1).IsBomb.Should().BeTrue();
@@ -41,9 +43,9 @@ namespace MinesweeperTDD.Tests
         }
 
         [Test, TestCase(1,1,2), TestCase(1,2,3)]
-        public void Size_IsGreaterThan_BombCount(int x, int y, int bombCount)
+        public void When_BombCountIsGreaterThanSize_ThrowsException(int x, int y, int bombCount)
         {
-            var sut = MinesweeperBoardBuilder.New().WithSize(x, y).WithBombCount(bombCount);
+            var sut = Build.MinesweeperBoard().WithSize(x, y).WithBombCount(bombCount);
 
             Action act = () => sut.Build();
 
@@ -53,10 +55,20 @@ namespace MinesweeperTDD.Tests
         [Test]
         public void EveryTile_Has_MinesweeperContent()
         {
-            MinesweeperBoard sut = MinesweeperBoardBuilder.New().WithSize(1, 2);
+            MinesweeperBoard sut = Build.MinesweeperBoard().WithSize(1, 2);
 
             sut[0, 0].Content.Should().BeOfType<MinesweeperContent>();
             sut[0, 1].Content.Should().BeOfType<MinesweeperContent>();
+        }
+
+        [Test, Repeat(100)]
+        public void Bombs_ArePlaced_Randomly()
+        {
+            MinesweeperBoard sut = Build.MinesweeperBoard().WithSize(50, 50).WithBombCount(1);
+
+            var firstTile = sut.GetContent(0, 0);
+
+            firstTile.IsBomb.Should().BeFalse();
         }
     }
 }

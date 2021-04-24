@@ -1,6 +1,6 @@
 using FluentAssertions;
+using Kalendra.Minesweeper.Tests.TestDataBuilders.StaticShortcuts;
 using MinesweeperTDD.Runtime.Domain;
-using MinesweeperTDD.Tests.TestDataBuilders;
 using NUnit.Framework;
 
 namespace MinesweeperTDD.Tests
@@ -10,7 +10,7 @@ namespace MinesweeperTDD.Tests
         [Test]
         public void HasFlag_IsFalse_ByDefault()
         {
-            MinesweeperContent sut = MinesweeperContentBuilder.New();
+            MinesweeperContent sut = Build.MinesweeperContent();
 
             var result = sut.HasFlag;
 
