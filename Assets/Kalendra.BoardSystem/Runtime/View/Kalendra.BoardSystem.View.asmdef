@@ -1,0 +1,15 @@
+{
+    "name": "Kalendra.BoardSystem.View",
+    "references": [
+        "GUID:f93f633f285644d5bec352a81e4fa04d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

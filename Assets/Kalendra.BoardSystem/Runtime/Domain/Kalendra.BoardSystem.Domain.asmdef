@@ -1,0 +1,15 @@
+{
+    "name": "Kalendra.BoardSystem.Domain",
+    "references": [
+        "GUID:dd71efc06e808dd4f96fc733e2faea61"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

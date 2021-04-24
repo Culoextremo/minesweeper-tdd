@@ -1,0 +1,22 @@
+{
+    "name": "Kalendra.BoardSystem.Tests.Builders",
+    "references": [
+        "GUID:dd71efc06e808dd4f96fc733e2faea61",
+        "GUID:4c5265916d537f3428fe30fb54b7b82d",
+        "GUID:54043fe83d89fc64dacdfa2401a9efac",
+        "GUID:eaa3ac659f2356d42ade3df3606dd595"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "NSubstitute.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

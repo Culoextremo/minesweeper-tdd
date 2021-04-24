@@ -1,0 +1,16 @@
+{
+    "name": "Kalendra.Commons.Application",
+    "references": [
+        "GUID:dd71efc06e808dd4f96fc733e2faea61",
+        "GUID:0363c39af0dc2f442b1cb16b3f39a106"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Kalendra.BoardSystem.Tests",
+    "references": [
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:4c5265916d537f3428fe30fb54b7b82d",
+        "GUID:e372c541aba5148868e12aa078ca7c20",
+        "GUID:dd71efc06e808dd4f96fc733e2faea61",
+        "GUID:6f60214731725354d8edd2fd110ee006"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "NSubstitute.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

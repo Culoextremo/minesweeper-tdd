@@ -1,0 +1,18 @@
+{
+    "name": "Kalendra.Commons.Editor",
+    "references": [
+        "GUID:0363c39af0dc2f442b1cb16b3f39a106",
+        "GUID:e3805d9f9732fbe48b5da713c659bf03",
+        "GUID:6f60214731725354d8edd2fd110ee006",
+        "GUID:3ce2a94a7babb884f98e2fc836cf8ab6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

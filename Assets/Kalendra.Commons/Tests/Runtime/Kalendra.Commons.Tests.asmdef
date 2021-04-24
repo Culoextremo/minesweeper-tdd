@@ -1,0 +1,27 @@
+{
+    "name": "Kalendra.Commons.Tests",
+    "references": [
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:4c5265916d537f3428fe30fb54b7b82d",
+        "GUID:e372c541aba5148868e12aa078ca7c20",
+        "GUID:dd71efc06e808dd4f96fc733e2faea61",
+        "GUID:0363c39af0dc2f442b1cb16b3f39a106",
+        "GUID:e3805d9f9732fbe48b5da713c659bf03",
+        "GUID:6f60214731725354d8edd2fd110ee006",
+        "GUID:3ce2a94a7babb884f98e2fc836cf8ab6"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll",
+        "NSubstitute.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

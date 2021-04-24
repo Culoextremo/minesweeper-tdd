@@ -1,0 +1,16 @@
+{
+    "name": "Kalendra.BoardSystem.Infraestructure",
+    "references": [
+        "GUID:0363c39af0dc2f442b1cb16b3f39a106",
+        "GUID:6f60214731725354d8edd2fd110ee006"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
