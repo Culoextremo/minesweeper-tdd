@@ -16,5 +16,15 @@ namespace MinesweeperTDD.Tests
 
             result.Should().Be(false);
         }
+
+        [Test]
+        public void IsRevealed_IsFalse_ByDefault()
+        {
+            MinesweeperContent sut = Build.MinesweeperContent();
+
+            var result = sut.IsRevealed;
+
+            result.Should().Be(false);
+        }
     }
 }

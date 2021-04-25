@@ -2,6 +2,8 @@
     "name": "MinesweeperTDD_Tests_Builders",
     "rootNamespace": "",
     "references": [
+        "GUID:dd71efc06e808dd4f96fc733e2faea61",
+        "GUID:6f60214731725354d8edd2fd110ee006",
         "GUID:4c5265916d537f3428fe30fb54b7b82d",
         "GUID:e57ac237f7883f141bf7f0f1e7b271a2"
     ],

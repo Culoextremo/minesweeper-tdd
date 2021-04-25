@@ -1,6 +1,4 @@
-﻿
-using Kalendra.BoardSystem.Runtime.Domain.Entities;
-using System;
+﻿using Kalendra.BoardSystem.Runtime.Domain.Entities;
 using System.Collections.Generic;
 
 namespace MinesweeperTDD.Tests

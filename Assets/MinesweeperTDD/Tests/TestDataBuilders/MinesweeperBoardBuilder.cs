@@ -1,3 +1,4 @@
+using Kalendra.Commons.Runtime.Infraestructure.Services;
 using Kalendra.Commons.Tests.TestDataBuilders.Builders;
 using MinesweeperTDD.Runtime.Domain;
 
@@ -7,7 +8,10 @@ namespace MinesweeperTDD.Tests.TestDataBuilders
     {
         int sizeX = 1;
         int sizeY = 1;
-        int bombCount = 1;
+        
+        int bombCount = 0;
+
+        IBombTilesSelector selector = new RandomBombTilesSelector(new SystemRandomService());
 
         #region Fluent API
         public MinesweeperBoardBuilder WithSize(int sizeX, int sizeY)
@@ -16,9 +20,16 @@ namespace MinesweeperTDD.Tests.TestDataBuilders
             this.sizeY = sizeY;
             return this;
         }
+        
         public MinesweeperBoardBuilder WithBombCount(int bombCount)
         {
             this.bombCount = bombCount;
+            return this;
+        }
+
+        public MinesweeperBoardBuilder WithSelector(IBombTilesSelector selector)
+        {
+            this.selector = selector;
             return this;
         }
         #endregion
@@ -32,7 +43,7 @@ namespace MinesweeperTDD.Tests.TestDataBuilders
         #endregion
 
         #region Builder implementation
-        public override MinesweeperBoard Build() => new MinesweeperBoard(sizeX, sizeY, bombCount);
+        public override MinesweeperBoard Build() => new MinesweeperBoard(sizeX, sizeY, bombCount, selector);
         #endregion
     }
 }

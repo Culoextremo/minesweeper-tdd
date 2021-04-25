@@ -1,6 +1,4 @@
-﻿
-using System.Linq;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Kalendra.Commons.Runtime.Infraestructure.Services;
 using NUnit.Framework;
 using Kalendra.BoardSystem.Tests.TestDataBuilders.StaticShortcuts;

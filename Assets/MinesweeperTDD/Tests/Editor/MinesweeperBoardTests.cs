@@ -2,6 +2,7 @@
 using FluentAssertions;
 using Kalendra.Minesweeper.Tests.TestDataBuilders.StaticShortcuts;
 using MinesweeperTDD.Runtime.Domain;
+using NSubstitute;
 using NUnit.Framework;
 
 
@@ -9,6 +10,7 @@ namespace MinesweeperTDD.Tests
 {
     class MinesweeperBoardTests
     {
+        #region Construction
         [Test]
         public void Size_IsSet_ByConstructor()
         {
@@ -20,9 +22,9 @@ namespace MinesweeperTDD.Tests
         }
 
         [Test]
-        public void BombCount_NonPositive_ThrowsException()
+        public void BombCount_IsNegative_ThrowsException()
         {
-            var sut = Build.MinesweeperBoard().WithBombCount(0);
+            var sut = Build.MinesweeperBoard().WithBombCount(-1);
 
             Action act = () => sut.Build();
 
@@ -32,12 +34,11 @@ namespace MinesweeperTDD.Tests
         [Test]
         public void BombCount_IsPlaced_ByConstructor()
         {
-            MinesweeperBoard sut = Build.MinesweeperBoard().WithSize(1,5).WithBombCount(4);
+            MinesweeperBoard sut = Build.MinesweeperBoard().WithSize(1,2).WithBombCount(1);
 
-            sut.GetContent(0, 0).IsBomb.Should().BeTrue();
-            sut.GetContent(0, 1).IsBomb.Should().BeTrue();
-            sut.GetContent(0, 2).IsBomb.Should().BeTrue();
-            sut.GetContent(0, 3).IsBomb.Should().BeTrue();
+            var anyBomb = sut.GetContent(0, 0).IsBomb || sut.GetContent(0, 1).IsBomb;
+
+            anyBomb.Should().BeTrue();
         }
 
         [Test, TestCase(1,1,2), TestCase(1,2,3)]
@@ -58,11 +59,55 @@ namespace MinesweeperTDD.Tests
             sut[0, 0].Content.Should().BeOfType<MinesweeperContent>();
             sut[0, 1].Content.Should().BeOfType<MinesweeperContent>();
         }
-
+        
         [Test]
-        public void Bombs_ArePlaced_ByProvider()
+        public void Bombs_ArePlaced_BySelector()
         {
-            //TODO: Write test.
+            //Arrange
+            var selectorMock = Substitute.For<IBombTilesSelector>();
+            selectorMock.GetBombTiles(default, default).ReturnsForAnyArgs(new[] {(0, 1)});
+            
+            MinesweeperBoard sut = Build.MinesweeperBoard().WithSize(1, 2).WithSelector(selectorMock);
+            
+            //Act
+            var result = sut.GetContent(0, 1);
+
+            //Assert
+            result.IsBomb.Should().BeTrue();
         }
+        #endregion
+        
+        #region Flags
+        [Test]
+        public void IsFlag_OnNewBoard_IsFalse_ByDefault()
+        {
+            MinesweeperBoard sut = Build.MinesweeperBoard();
+
+            var result = sut.GetContent(0, 0).HasFlag; 
+            
+            result.Should().BeFalse();
+        }
+        
+        [Test]
+        public void SwitchFlag_OnNewBoard_ThenFlagIsOn_InThatTile()
+        {
+            MinesweeperBoard sut = Build.MinesweeperBoard();
+
+            sut.SwitchFlag(0, 0);
+
+            sut.GetContent(0, 0).HasFlag.Should().BeTrue();
+        }
+        
+        [Test]
+        public void SwitchFlag_WhereFlagIsOn_ThenFlagIsOff()
+        {
+            MinesweeperBoard sut = Build.MinesweeperBoard();
+            sut.SwitchFlag(0, 0);
+
+            sut.SwitchFlag(0, 0);
+
+            sut.GetContent(0, 0).HasFlag.Should().BeFalse();
+        }
+        #endregion
     }
 }
