@@ -1,10 +1,11 @@
 ﻿
+using System.Linq;
 using FluentAssertions;
-using Kalendra.BoardSystem.Runtime.Domain.Entities;
-using Kalendra.Commons.Runtime.Architecture.Services;
 using Kalendra.Commons.Runtime.Infraestructure.Services;
 using NUnit.Framework;
 using Kalendra.BoardSystem.Tests.TestDataBuilders.StaticShortcuts;
+using Kalendra.Commons.Runtime.Architecture.Services;
+using NSubstitute;
 
 namespace MinesweeperTDD.Tests
 {
@@ -56,6 +57,23 @@ namespace MinesweeperTDD.Tests
             var result = sut.GetBombTiles(board, 2);
 
             result.Should().OnlyHaveUniqueItems();
+        }
+
+        [Test]
+        public void GetBombTiles_SelectTiles_ByRandomService()
+        {
+            //Arrange
+            var randomMock = Substitute.For<IRandomService>();
+            randomMock.GetRandom<(int, int)>(default).ReturnsForAnyArgs((0, 1));
+
+            var board = Build.Board().WithSize(1, 2).Build();
+            RandomBombTilesSelector sut = new RandomBombTilesSelector(randomMock);
+            
+            //Act       
+            var result = sut.GetBombTiles(board, 1);
+
+            //Assert
+            result.Should().Contain((0, 1));
         }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using System;
 using FluentAssertions;
-using Kalendra.Commons.Runtime.Architecture.Services;
 using Kalendra.Minesweeper.Tests.TestDataBuilders.StaticShortcuts;
 using MinesweeperTDD.Runtime.Domain;
-using NSubstitute;
 using NUnit.Framework;
 
 
