@@ -6,7 +6,7 @@ using NSubstitute;
 
 namespace Kalendra.BoardSystem.Tests.TestDataBuilders.Domain
 {
-    internal class MergeOperationBuilder : Builder<MergeOperation>
+    public class MergeOperationBuilder : Builder<MergeOperation>
     {
         ITile originTile = Substitute.For<ITile>();
         ITile targetTile = Substitute.For<ITile>();

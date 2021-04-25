@@ -4,7 +4,7 @@ using Kalendra.Commons.Tests.TestDataBuilders.Builders;
 
 namespace Kalendra.BoardSystem.Tests.TestDataBuilders.Domain
 {
-    internal class BoardOperationsManagerBuilder : Builder<BoardAsyncOperationScheduler>
+    public class BoardOperationsManagerBuilder : Builder<BoardAsyncOperationScheduler>
     {
         List<IBoardAsyncOperation> begginingOperations;
 

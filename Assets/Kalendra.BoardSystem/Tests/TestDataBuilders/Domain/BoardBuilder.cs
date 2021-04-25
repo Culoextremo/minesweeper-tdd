@@ -3,7 +3,7 @@ using Kalendra.Commons.Tests.TestDataBuilders.Builders;
 
 namespace Kalendra.BoardSystem.Tests.TestDataBuilders.Domain
 {
-    internal class BoardBuilder : Builder<Board>
+    public class BoardBuilder : Builder<Board>
     {
         int sizeX = 1, sizeY = 1;
 

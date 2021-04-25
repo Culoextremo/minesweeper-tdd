@@ -3,16 +3,16 @@ using Kalendra.BoardSystem.Tests.TestDataBuilders.Domain;
 
 namespace Kalendra.BoardSystem.Tests.TestDataBuilders.StaticShortcuts
 {
-    internal static partial class Build
+    public static partial class Build
     {
-        internal static BoardBuilder Board() => BoardBuilder.New();
-        internal static Board Board_WithNoTiles() => BoardBuilder.BoardWithNoTiles();
-        
-        internal static BoardTileBuilder BoardTile() => BoardTileBuilder.New();
+        public static BoardBuilder Board() => BoardBuilder.New();
+        public static Board Board_WithNoTiles() => BoardBuilder.BoardWithNoTiles();
 
-        internal static SpawnOperationBuilder SpawnOperation() => SpawnOperationBuilder.New();
-        internal static MergeOperationBuilder MergeOperation() => MergeOperationBuilder.New();
+        public static BoardTileBuilder BoardTile() => BoardTileBuilder.New();
 
-        internal static BoardOperationsManagerBuilder BoardOperationsManager() => BoardOperationsManagerBuilder.New();
+        public static SpawnOperationBuilder SpawnOperation() => SpawnOperationBuilder.New();
+        public static MergeOperationBuilder MergeOperation() => MergeOperationBuilder.New();
+
+        public static BoardOperationsManagerBuilder BoardOperationsManager() => BoardOperationsManagerBuilder.New();
     }
 }

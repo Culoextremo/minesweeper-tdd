@@ -5,7 +5,7 @@ using NSubstitute;
 
 namespace Kalendra.BoardSystem.Tests.TestDataBuilders.Domain
 {
-    internal class SpawnOperationBuilder : Builder<SpawnOperation>
+    public class SpawnOperationBuilder : Builder<SpawnOperation>
     {
         ISpawnOperatorPolicy spawnPolicy = Substitute.For<ISpawnOperatorPolicy>();
 

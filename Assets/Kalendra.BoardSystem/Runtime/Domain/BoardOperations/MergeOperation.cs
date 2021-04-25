@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Kalendra.BoardSystem.Runtime.Domain.Entities.BoardOperations
 {
-    internal class MergeOperation : IBoardAsyncOperation
+    public class MergeOperation : IBoardAsyncOperation
     {
         readonly ITile originTile;
         readonly ITile targetTile;

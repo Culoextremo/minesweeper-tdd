@@ -61,14 +61,10 @@ namespace MinesweeperTDD.Tests
             sut[0, 1].Content.Should().BeOfType<MinesweeperContent>();
         }
 
-        [Test, Repeat(100)]
-        public void Bombs_ArePlaced_Randomly()
+        [Test]
+        public void Bombs_ArePlaced_ByProvider()
         {
-            MinesweeperBoard sut = Build.MinesweeperBoard().WithSize(50, 50).WithBombCount(1);
-
-            var firstTile = sut.GetContent(0, 0);
-
-            firstTile.IsBomb.Should().BeFalse();
+            //TODO: Write test.
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Kalendra.BoardSystem.Runtime.Domain.Entities
 {
-    internal class BoardTile : ITile
+    public class BoardTile : ITile
     {
         public (int x, int y) Coords { get; }
 
